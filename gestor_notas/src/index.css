@@ -1,0 +1,109 @@
+
+body {
+	margin: 0;
+	background-color: wheat;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/*Contiene a la lista de notas, la centra y decora*/
+.container {
+	max-width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 20px;
+	padding-left: 20px;
+	min-height: 100vh;
+}
+
+/*Muestra en un grid todas las notas, y se autocompletan las columnas necesarias para ocupar la pantalla*/
+.notes-list {
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(
+		auto-fill,
+		minmax(250px, 1fr)  /*No puede ser menor de 250px o mayor de 1fr*/
+	);
+}
+
+
+/*Esta linea edita solo la nota que se va a añadir*/
+.note.new {
+	background-color: #67d767;
+}
+
+/*Quitamos el borde de la caja e igualamos fondo*/
+textarea {
+	border: none;
+	resize: none;
+	background-color: #67d767;
+}
+
+/*Elimina el focus al escribir en el textarea*/
+textarea:focus {
+	outline: none;
+}
+
+/*Editamos el boton de guardado*/
+.save {
+	background-color: rgb(159, 221, 35);
+	border: none;
+	border-radius: 15px;
+	padding: 5px 10px 5px 10px;
+}
+
+.save:hover {
+	background-color: rgb(170, 255, 0);
+	cursor: pointer;
+}
+
+/*Notas: Muestra los datos en una columna*/
+.note {
+	background-color: #ebda20;
+	border-radius: 10px;
+	padding: 1rem;
+	min-height: 170px;
+	display: flex;
+	flex-direction: column; 
+	justify-content: space-between;
+	white-space: pre-wrap;
+}
+
+/*Es la información de abajo de una nota (fecha e icono) y aparecen separados*/
+.note-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/*Al pasar el cursor por la papelera aparece un cursor*/
+.delete-icon {
+	cursor: pointer;
+}
+
+.search {
+	display: flex;
+	align-items: center;
+	background-color: rgb(233, 233, 233);
+	border-radius: 10px;
+	padding: 5px;
+	margin-bottom: 1.5em;
+}
+
+
+/*Adornamos la barra de búsqueda quitandole el outline del focus y el borde*/
+.search input {
+	border: none;
+	background-color: rgb(233, 233, 233);
+	width: 100%;
+}
+
+.search input:focus {
+	outline: none;
+}
